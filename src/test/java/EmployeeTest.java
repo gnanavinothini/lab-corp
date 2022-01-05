@@ -9,7 +9,6 @@ import io.restassured.response.Response;
 import java.util.List;
 import java.util.Map;
 
-@Test
 public class EmployeeTest {
 
     private String baseURI = "https://6143a99bc5b553001717d06a.mockapi.io/testapi/v1";
@@ -53,7 +52,7 @@ public class EmployeeTest {
         Assert.assertEquals(201, response.getStatusCode());
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, enabled = false)
     public void validateUserDetailsTest() {
         Response response = RestAssured.given()
                 .contentType(ContentType.JSON)
